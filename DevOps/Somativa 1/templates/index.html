@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>CRUD</h1>
+        
+        <form action="/add" method="post">
+            <input type="text" name="content" placeholder="Enter post content" required>
+            <button type="submit">Adicionar</button>
+        </form>
+        
+        <h2>Lista</h2>
+        <ul>
+            {% for post in posts %}
+                <li>
+                    <span>{{ post.content }}</span>
+                    <a href="{{ url_for('delete_post', index=post.id) }}">Deletar</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+FROM node:latest
+
+WORKDIR /devops/projeto/
+
+COPY public/ /devops/projeto/public
+COPY src/ /devops/projeto/src
+COPY package.json /devops/projeto/
+RUN npm install
+
+EXPOSE 4000
+
+CMD ["npm", "start"]

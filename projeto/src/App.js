@@ -52,7 +52,7 @@ function App() {
 
   const handleLogin = () => {
     if (email === 'eduardo.lino@pucpr.br' && password === '123456') {
-      setMessage('Acessado com sucesso!');
+      setMessage('Acessado com sucesso!'); 
     } else {
       setMessage('Usuário ou senha incorretos!');
     }
